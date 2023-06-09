@@ -52,19 +52,16 @@ I choosed those because they were the ones I have been using to practice website
 
 * [![Next][Next.js]][Next-url]
 * [![React][React.js]][React-url]
+* [![React][React.js]][React-url]
 
 <!-- GETTING STARTED -->
-## The creation
+## Setting up the colors
 
-I have used <a href = "https://coolors.co">Coolors</a> and <a href = "https://huemint.com">Huemint</a> to define my color palete and test it out. Coolors stands to create good paletes and Huemint to test them.
+I have used <b><a href = "https://coolors.co">Coolors</a> and <a href = "https://huemint.com">Huemint</a></b> to define my color palette and test it out, respectively.
 
-### Prerequisites
+### Setting up the structure
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+
 
 ### Installation
 
@@ -153,20 +150,12 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+Here I am going to share with you contents that helped me with the website building process.
 
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+* <a href = "https://www.youtube.com/watch v=EW7m2WIvFgQ&list=PLMdYygf53DP7FJzPslLnmqp0QylyFfA8a&index=1">Improving FCP and LCP </a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
