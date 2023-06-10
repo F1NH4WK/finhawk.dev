@@ -52,14 +52,15 @@ I choosed those because they were the ones I have been using to practice website
 
 * [![Next][Next.js]][Next-url]
 * [![React][React.js]][React-url]
-* [![React][React.js]][React-url]
 
 <!-- GETTING STARTED -->
 ## Setting up the colors
 
-I have used <b><a href = "https://coolors.co">Coolors</a> and <a href = "https://huemint.com">Huemint</a></b> to define my color palette and test it out, respectively.
+I have used <b><a href = "https://coolors.co">Coolors</a> and <a href = "https://huemint.com">Huemint</a></b> to define my color palette and test it out, respectively. <br />
 
-### Setting up the structure
+<img src = "https://imgur.com/ekQpTBS.gif" width = "400" style = "border-radius: 50px"/>
+
+### Setting up the structurey
 
 
 
