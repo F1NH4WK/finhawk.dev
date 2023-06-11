@@ -45,7 +45,6 @@
   </p>
 </div>
 
-
 ### Built With
 
 I choosed those because they were the ones I have been using to practice website creation, so I was used to deal with them. By the way, the Vercel support for Next's pretty good.
@@ -53,12 +52,19 @@ I choosed those because they were the ones I have been using to practice website
 * [![Next][Next.js]][Next-url]
 * [![React][React.js]][React-url]
 
+### Where do I started?
+ 
+ First I bought a domain in <a href = "https://domains.google"><b>Google Domains</b><a/> and then I set my DNS in <a href = "https://vercel.com"><b>Vercel</b></a> to it. It may take some time to DNS works, but you can check it in <a href = "https://dnschecker.org"><b>DNS checker</b>.</a> After doing these steps I started to setup the pallete and so on...
+```md
+The .dev was the cheaper and the one I was looking for, lol
+```
+
 <!-- GETTING STARTED -->
 ## Setting up the colors
 
 I have used <b><a href = "https://coolors.co">Coolors</a> and <a href = "https://huemint.com">Huemint</a></b> to define my color palette and test it out, respectively. <br />
 
-<img src = "https://imgur.com/ekQpTBS.gif" width = "400" style = "border-radius: 50px"/>
+<img src = "https://imgur.com/ekQpTBS.gif" alt = "Pallete set by Coolors" width = "400" style = "border-radius: 50px"/>
 
 ### Setting up the structurey
 
