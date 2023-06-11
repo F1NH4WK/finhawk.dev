@@ -49,8 +49,8 @@
 
 I choosed those because they were the ones I have been using to practice website creation, so I was used to deal with them. By the way, the Vercel support for Next's pretty good.
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
+ [![Next][Next.js]][Next-url]
+ [![React][React.js]][React-url]
 
 ### Where do I started?
  
@@ -64,7 +64,7 @@ The .dev was the cheaper and the one I was looking for, lol
 
 I have used <b><a href = "https://coolors.co">Coolors</a> and <a href = "https://huemint.com">Huemint</a></b> to define my color palette and test it out, respectively. <br />
 
-<img src = "https://imgur.com/ekQpTBS.gif" alt = "Pallete set by Coolors" width = "400" style = "border-radius: 50px"/>
+![Pallete set by Coolors](https://imgur.com/ekQpTBS.gif)
 
 ### Setting up the structurey
 
