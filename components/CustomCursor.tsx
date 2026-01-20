@@ -5,29 +5,31 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 export default function CustomCursor() {
-  const cursorRef = useRef(null);
-  const lineV = useRef(null);
-  const lineH = useRef(null);
+  // 1. Tipagem dos Refs (Importante para TS)
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const lineV = useRef<HTMLDivElement>(null);
+  const lineH = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    // Otimização: quickSetter é muito mais rápido para seguir o mouse
+    // 2. Verificação de segurança: garante que o elemento existe antes de animar
+    if (!cursorRef.current) return;
+
+    // Otimização: quickSetter
     const xSet = gsap.quickSetter(cursorRef.current, "x", "px");
     const ySet = gsap.quickSetter(cursorRef.current, "y", "px");
 
-    // Movimento
-    const moveCursor = (e) => {
+    // 3. Tipagem do evento 'e' como MouseEvent
+    const moveCursor = (e: MouseEvent) => {
       xSet(e.clientX);
       ySet(e.clientY);
     };
 
     // Efeitos de Interação (Hover)
     const onHover = () => {
-      // Vira um "X" e aumenta
       gsap.to(cursorRef.current, { rotation: 45, scale: 1.5, duration: 0.2, ease: "power2.out" });
     };
 
     const onLeave = () => {
-      // Volta a ser "+"
       gsap.to(cursorRef.current, { rotation: 0, scale: 1, duration: 0.2, ease: "power2.out" });
     };
 
@@ -46,6 +48,7 @@ export default function CustomCursor() {
 
     // Detectar Hover em links/botões
     const links = document.querySelectorAll("a, button, .pointer-events-auto, input, textarea");
+    
     links.forEach((link) => {
       link.addEventListener("mouseenter", onHover);
       link.addEventListener("mouseleave", onLeave);
@@ -65,11 +68,11 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* AQUI ESTÁ A MÁGICA:
-        Injetamos CSS global para matar o cursor padrão em TUDO (*),
-        inclusive links e botões que costumam forçar o cursor de volta.
+      {/* Atenção: 'jsx' e 'global' são props específicas do Next.js/styled-jsx.
+        O TypeScript pode reclamar delas dependendo da configuração do projeto, 
+        mas o código vai compilar e funcionar.
       */}
-      <style global jsx>{`
+      <style jsx global>{`
         * {
           cursor: none !important;
         }

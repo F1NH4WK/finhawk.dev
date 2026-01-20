@@ -5,14 +5,17 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 export default function GeometricBreathers() {
-  const containerRef = useRef(null);
+  // 1. Tipagem do Ref
+  const containerRef = useRef<HTMLDivElement>(null);
   const items = new Array(12).fill(null);
 
   useGSAP(() => {
     const shapes = gsap.utils.toArray(".geo-breather");
 
-    const animateShape = (element) => {
+    // 2. Tipagem do elemento a ser animado
+    const animateShape = (element: gsap.TweenTarget) => {
       if (!element) return;
+      
       const randomX = gsap.utils.random(5, 95);
       const randomY = gsap.utils.random(5, 95);
       const baseScale = gsap.utils.random(0.4, 1.2);
@@ -47,7 +50,7 @@ export default function GeometricBreathers() {
         duration: gsap.utils.random(2, 4),
         ease: "sine.inOut",
         yoyo: true,
-        repeat: gsap.utils.random(1, 2, 1)
+        repeat: gsap.utils.random(1, 2, 1) // repeat: min, max, snap
       });
 
       // Fade out
@@ -60,14 +63,15 @@ export default function GeometricBreathers() {
       });
     };
 
-    shapes.forEach((shape) => {
-      gsap.delayedCall(gsap.utils.random(0, 5), () => animateShape(shape));
+    shapes.forEach((shape, i) => {
+      // 4. Cast necessário para garantir que é um TweenTarget
+      gsap.delayedCall(gsap.utils.random(0, 5), () => animateShape(shape as gsap.TweenTarget));
     });
 
   }, { scope: containerRef });
 
-  // MUDANÇA: Cores dos SVGs para BRANCO
-  const getShape = (index) => {
+  // 3. Tipagem do argumento index
+  const getShape = (index: number) => {
     // Use 'vector-effect-non-scaling-stroke' para bordas nítidas mesmo com scale
     const strokeClass = "stroke-white stroke-[2px] fill-none vector-effect-non-scaling-stroke";
     const fillClass = "fill-white stroke-none";
