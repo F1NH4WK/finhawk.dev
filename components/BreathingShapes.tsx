@@ -3,9 +3,7 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-
-// Se você não for usar o parallaxRef aqui dentro, pode remover a interface e o argumento.
-// Mantive como opcional (?) para não quebrar caso você passe.
+  
 interface BreathingShapesProps {
   parallaxRef?: React.RefObject<HTMLDivElement>; 
 }
@@ -13,17 +11,14 @@ interface BreathingShapesProps {
 export default function BreathingShapes({ parallaxRef }: BreathingShapesProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   
-  // Criamos 15 elementos para preencher a tela
   const items = new Array(15).fill(null);
 
   useGSAP(() => {
     const shapes = gsap.utils.toArray(".geo-shape");
 
-    // Tipamos 'el' como 'any' ou 'gsap.TweenTarget' pois o GSAP aceita vários tipos
     const animateShape = (el: gsap.TweenTarget) => {
       if (!el) return;
 
-      // Reset posicional aleatório
       gsap.set(el, {
         xPercent: -50, 
         yPercent: -50,
@@ -35,10 +30,9 @@ export default function BreathingShapes({ parallaxRef }: BreathingShapesProps) {
       });
 
       const tl = gsap.timeline({
-        onComplete: () => animateShape(el) // Loop infinito recursivo
+        onComplete: () => animateShape(el) 
       });
 
-      // 1. Entrada Elástica
       tl.to(el, {
         scale: gsap.utils.random(0.5, 1.5),
         opacity: gsap.utils.random(0.1, 0.4),
@@ -46,7 +40,6 @@ export default function BreathingShapes({ parallaxRef }: BreathingShapesProps) {
         ease: "back.out(1.7)"
       });
 
-      // 2. Respirar (Flutuar e Girar)
       tl.to(el, {
         rotation: `+=${gsap.utils.random(-45, 45)}`,
         scale: "+=0.2",
@@ -56,7 +49,6 @@ export default function BreathingShapes({ parallaxRef }: BreathingShapesProps) {
         ease: "sine.inOut"
       });
 
-      // 3. Saída
       tl.to(el, {
         scale: 0,
         opacity: 0,
@@ -65,15 +57,11 @@ export default function BreathingShapes({ parallaxRef }: BreathingShapesProps) {
       });
     };
 
-    // Inicia cada forma com um delay diferente
     shapes.forEach((shape, i) => {
-      // Cast para TweenTarget para o TS não reclamar
       gsap.delayedCall(i * 0.5, () => animateShape(shape as gsap.TweenTarget));
     });
 
   }, { scope: containerRef });
-
-  // Tipagem explícita do argumento 'i'
   const getShape = (i: number) => {
     const style = "stroke-white/30 stroke-[1.5px] fill-none vector-effect-non-scaling-stroke";
     const type = i % 4;

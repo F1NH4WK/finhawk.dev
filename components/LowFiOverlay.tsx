@@ -1,9 +1,7 @@
 export default function LowFiOverlay() {
   return (
     <div className="fixed inset-0 pointer-events-none z-[100] overflow-hidden">
-      {/* 1. Efeito de Ruído (Noise) Estático */}
       <div className="absolute inset-0 w-full h-full opacity-[0.05] mix-blend-overlay">
-        {/* Usamos um padrão de ruído em base64 repetido para evitar requests de imagem */}
         <div 
             className="w-full h-full bg-repeat animate-noise"
             style={{ 
@@ -12,10 +10,8 @@ export default function LowFiOverlay() {
         />
       </div>
 
-      {/* 2. Scanlines (Linhas horizontais) */}
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0),rgba(255,255,255,0)_50%,rgba(0,0,0,0.2)_50%,rgba(0,0,0,0.2))] bg-[length:100%_4px] pointer-events-none z-10" />
 
-      {/* 3. Vinheta (Escurecer cantos) */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_50%,rgba(0,0,0,0.6)_100%)] z-20" />
     </div>
   );
